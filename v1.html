@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New D&D Beyond</title>
+    </head>
+    <body><h1>Let's start with a dice roller</h1>
+        <button id="d2" onclick="d2add()">+1 d2</button>
+        <button id="d4" onclick="d4add()">+1 d4</button>
+        <button id="d6" onclick="d6add()">+1 d6</button>
+        <button id="d8" onclick="d8add()">+1 d8</button>
+        <button id="d10" onclick="d10add()">+1 d10</button>
+        <button id="d12" onclick="d12add()">+1 d12</button>
+        <button id="d20" onclick="d20add()">+1 d20</button>
+        <p>Modifier</p>
+        <input id="modNum" type="number">
+        <p id="display"> </p><br>
+        <button id="Go" onclick="go()"> Roll </button>
+        <p id="numsRolled">Numbers Rolled: </p>
+        <p id="result">Result Here: </p>
+
+        <script>
+            let diceToRoll = [];
+            let numsRolled = [];
+            let d2num = 0;
+            let d4num = 0;
+            let d6num = 0;
+            let d8num = 0;
+            let d10num = 0;
+            let d12num = 0;
+            let d20num = 0;
+            let displayText = '';
+            
+            function d2add(){
+                diceToRoll.push("d2");
+                d2num += 1;
+                display()
+            }
+            function d4add(){
+                diceToRoll.push("d4");
+                d4num += 1;
+                display()
+            }
+            function d6add(){
+                diceToRoll.push("d6");
+                d6num += 1;
+                display()
+            }
+            function d8add(){
+                diceToRoll.push("d8");
+                d8num += 1;
+                display()
+            }
+            function d10add(){
+                diceToRoll.push("d10");
+                d10num += 1;
+                display()
+            }
+            function d12add(){
+                diceToRoll.push("d12");
+                d12num += 1;
+                display()
+            }
+            function d20add(){
+                diceToRoll.push("d20");
+                d20num += 1;
+                display()
+            }
+
+
+
+            function display(){
+                displayText = "";
+                if (d2num != 0){
+                    displayText += d2num + "d2 "
+                }
+                if (d4num != 0){
+                    displayText += d4num + "d4 "
+                }
+                if (d6num != 0){
+                    displayText += d6num + "d6 "
+                }
+                if (d8num != 0){
+                    displayText += d8num + "d8 "
+                }
+                if (d10num != 0){
+                    displayText += d10num + "d10 "
+                }
+                if (d12num != 0){
+                    displayText += d12num + "d12 "
+                }
+                if (d20num != 0){
+                    displayText += d20num + "d20 "
+                }
+                document.getElementById("display").innerHTML = displayText;
+
+            }
+            function go(){
+                let total = 0;
+                let numRoll = 0;
+
+                display();
+
+                for(let x = 0; x < diceToRoll.length; x++){
+                    if(diceToRoll[x] == "d2"){
+                        numRoll = Math.floor(Math.random() * 2) + 1;
+                        numsRolled.push(numRoll);
+                        total += numRoll;
+                    } else if(diceToRoll[x] == "d4"){
+                        numRoll = Math.floor(Math.random() * 4) + 1;
+                        numsRolled.push(numRoll);
+                        total += numRoll;
+                    } else if(diceToRoll[x] == "d6"){
+                        numRoll = Math.floor(Math.random() * 6) + 1;
+                        numsRolled.push(numRoll);
+                        total += numRoll;
+                    } else if(diceToRoll[x] == "d8"){
+                        numRoll = Math.floor(Math.random() * 8) + 1;
+                        numsRolled.push(numRoll);
+                        total += numRoll;
+                    } else if(diceToRoll[x] == "d10"){
+                        numRoll = Math.floor(Math.random() * 10) + 1;
+                        numsRolled.push(numRoll);
+                        total += numRoll;
+                    } else if(diceToRoll[x] == "d12"){
+                        numRoll = Math.floor(Math.random() * 12) + 1;
+                        numsRolled.push(numRoll);
+                        total += numRoll;
+                    } else if(diceToRoll[x] == "d20"){
+                        numRoll = Math.floor(Math.random() * 20) + 1;
+                        numsRolled.push(numRoll);
+                        total += numRoll;
+                    }
+                }
+
+                let modifier = Number(document.getElementById("modNum").value);
+
+                total += modifier;
+
+                if (modifier == 0){
+                    document.getElementById("numsRolled").innerHTML = "Numbers Rolled: " + numsRolled;
+                } else {
+                    document.getElementById("numsRolled").innerHTML = "Numbers Rolled: " + numsRolled + " + " + modifier;
+                }
+                
+                document.getElementById("result").innerHTML = "Result: " + total;
+
+                diceToRoll = [];
+                numsRolled = [];
+                d2num = 0;
+                d4num = 0;
+                d6num = 0;
+                d8num = 0;
+                d10num = 0;
+                d12num = 0;
+                d20num = 0;
+            }
+        </script>
+    </body>
+
+</html>

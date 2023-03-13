@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Dice Roller </title>
+        <link rel="icon" href="Assets/d20-logo.png">
+        <style>
+            .titleDiv {
+                border: 5px outset black;
+                background-color: rgb(72, 194, 194);
+                text-align: center;
+            }
+            .row {
+                display: flex;
+            }
+            .column {
+                display: inline-block;
+                vertical-align: middle;
+                background-color: rgb(194, 194, 194);
+            }
+            .left {
+                border-left: 3px outset black;
+                border-top: 3px outset black;
+                border-bottom: 3px outset black;
+                border-right: 1px outset black;
+                width: 30%;
+            }
+            .center {
+                border-left: 2px outset black;
+                border-top: 3px outset black;
+                border-bottom: 3px outset black;
+                border-right: 2px outset black;
+                width: 20%;
+            }
+            .right {
+                border-left: 1px outset black;
+                border-top: 3px outset black;
+                border-bottom: 3px outset black;
+                border-right: 3px outset black;
+                width: 50%;
+            }
+            .line {
+                margin-left:10px;
+                margin-bottom:5px;
+            }
+            .oneDig {
+                margin-left: 15.5px;
+                margin-right: 15.5px;
+            }
+            .twoDig {
+                margin-left: 11.5px;
+                margin-right: 11.5px;
+            }
+            .threeDig {
+                margin-left: 7.5px;
+                margin-right: 7.5px;
+            }
+
+        </style>
+    </head>
+    <body style="background-color: rgb(37, 37, 37);">
+        <div class="titleDiv">
+            <h1>Dice Roller</h1>
+            <p>Pretty self explanitory, but yeah it rolls dice.</p>
+            <p>Also, here's the first chapter of J.R.R. Tolkien's <i>The Hobbit</i></p>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column left" >
+                <div class="row line" name="D2" style="margin-top: 10px;">
+                    <input id="numOfd2" type="number" name="numOfd2" style="width:40px;">
+                    <label class="oneDig">d2 +</label>
+                    <input type="number" id="modifierd2" name="modifierd2" style="width:40px;">
+                </div>
+                <div class="row line" name="D4">
+                    <input type="number" id="numOfd4" name="numOfd4" style="width:40px;">
+                    <label class="oneDig">d4 +</label>
+                    <input type="number" id="modifierd4" name="modifierd4" style="width:40px;">
+                </div>
+                <div class="row line" name="D6">
+                    <input type="number" id="numOfd6" name="numOfd6" style="width:40px;">
+                    <label class="oneDig">d6 +</label>
+                    <input type="number" id="modifierd6" name="modifierd6" style="width:40px;">
+                </div>
+                <div class="row line" name="D8">
+                    <input type="number" id="numOfd8" name="numOfd8" style="width:40px;">
+                    <label class="oneDig">d8 +</label>
+                    <input type="number" id="modifierd8" name="modifierd8" style="width:40px;">
+                </div>
+                <div class="row line" name="D10">
+                    <input type="number" id="numOfd10" name="numOfd10" style="width:40px;">
+                    <label class="twoDig">d10 +</label>
+                    <input type="number" id="modifierd10" name="modifierd10" style="width:40px;">
+                </div>
+                <div class="row line" name="D12 twoDig">
+                    <input type="number" id="numOfd12" name="numOfd12" style="width:40px;">
+                    <label class="twoDig">d12 +</label>
+                    <input type="number" id="modifierd12" name="modifierd12" style="width:40px;">
+                </div>
+                <div class="row line" name="D20 twoDig">
+                    <input type="number" id="numOfd20" name="numOfd20" style="width:40px;">
+                    <label class="twoDig">d20 +</label>
+                    <input type="number" id="modifierd20" name="modifierd20" style="width:40px;">
+                </div>
+                <div class="row line" name="D100">
+                    <input type="number" id="numOfd100" name="numOfd100" style="width:40px;">
+                    <label class="threeDig">d100 +</label>
+                    <input type="number" id="modifierd100" name="modifierd100" style="width: 40px;">
+                </div>
+                <button id="roll" onclick="roll()" style="margin-top: 10px;margin-left: 64px;margin-bottom: 10px;">Roll</button>
+            </div>
+            <div class="column center">
+                <label style="margin-left: 40%;"><strong>Results:</strong></label>
+                <div id="scrollyThingy" class=" column" style="margin:auto;height:250px; width:100%;overflow:auto;">
+                    <p id="result" style="margin-left:10px;">Roll the dice to see something here</p>
+                </div>
+            </div>
+            <div class="column right">
+                <div class=" column" style="margin:auto;height:250px; width:100%;overflow:auto;">
+                    <p><iframe src="theHobbitpt1.txt" frameborder="0" height="214" style="width: 100%;"></iframe></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p style="text-align: center; color: white;">To view a full character sheet, click <a href = CharacterSheet.html>HERE</a></p>
+
+        <script src="rollDice.js"></script>
+    </body>
+</html>
