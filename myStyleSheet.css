@@ -1,4 +1,7 @@
 
+body {
+    background-color: rgb(55, 55, 55);
+}
 .titleDiv {
     border: 5px outset black;
     background-color: rgb(72, 194, 194);
@@ -17,21 +20,18 @@
     border-top: 3px outset black;
     border-bottom: 3px outset black;
     border-right: 1px outset black;
-    width: 30%;
 }
 .center {
     border-left: 2px outset black;
     border-top: 3px outset black;
     border-bottom: 3px outset black;
     border-right: 2px outset black;
-    width: 20%;
 }
 .right {
     border-left: 1px outset black;
     border-top: 3px outset black;
     border-bottom: 3px outset black;
     border-right: 3px outset black;
-    width: 50%;
 }
 .line {
     margin-left:10px;

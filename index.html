@@ -5,7 +5,7 @@
         <link rel="icon" href="Assets/d20-logo.png">
         <link rel="stylesheet" href="myStyleSheet.css">
     </head>
-    <body style="background-color: rgb(37, 37, 37);">
+    <body>
         <div class="titleDiv">
             <h1>Dice Roller</h1>
             <p>Pretty self explanitory, but yeah it rolls dice.</p>
@@ -13,7 +13,7 @@
         </div>
         <br>
         <div class="row">
-            <div class="column left" >
+            <div class="column left" name="D2" style="width: 30%;">
                 <div class="row line" name="D2" style="margin-top: 10px;">
                     <input id="numOfd2" type="number" name="numOfd2" style="width:40px;">
                     <label class="oneDig">d2 +</label>
@@ -56,13 +56,13 @@
                 </div>
                 <button id="roll" onclick="roll()" style="margin-top: 10px;margin-left: 64px;margin-bottom: 10px;">Roll</button>
             </div>
-            <div class="column center">
+            <div class="column center"  style="width: 20%;">
                 <label style="margin-left: 40%;"><strong>Results:</strong></label>
                 <div id="scrollyThingy" class=" column" style="margin:auto;height:250px; width:100%;overflow:auto;">
                     <p id="result" style="margin-left:10px;">Roll the dice to see something here</p>
                 </div>
             </div>
-            <div class="column right">
+            <div class="column right"  style="width: 50%;">
                 <div class=" column" style="margin:auto;height:250px; width:100%;overflow:auto;">
                     <p><iframe src="theHobbitpt1.txt" frameborder="0" height="214" style="width: 100%;"></iframe></p>
                 </div>
